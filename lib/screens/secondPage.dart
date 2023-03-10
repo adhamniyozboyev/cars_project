@@ -11,13 +11,45 @@ class SecondPage extends StatelessWidget {
     List list = getCarDatas();
     return Scaffold(
       appBar: AppBar(title: Text(list[a].name)),
-      body: ListView.builder(
-          itemCount: 1,
-          itemBuilder: (context, index) {
-            return Column(
-              children: [Image.asset(list[a].image)],
-            );
-          }),
+      body: Column(
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        children: [
+          Image.asset(
+            list[a].image,
+            height: 300,
+            width: 300,
+            fit: BoxFit.contain,
+          ),
+          Card(
+            child: Column(
+              children: [
+                Text(
+                  'Nomi :${list[a].name}',
+                  style: TextStyle(
+                      fontSize: 60,
+                      color: Colors.blue,
+                      fontStyle: FontStyle.italic),
+                ),
+                Text(
+                  'Yili: ${list[a].yili}',
+                  style: TextStyle(fontSize: 40),
+                ),
+                Text(
+                  'Narxi: ${list[a].cost}',
+                  style: TextStyle(fontSize: 40),
+                ),
+              ],
+            ),
+          ),
+          ElevatedButton(
+              style: ElevatedButton.styleFrom(backgroundColor: Colors.green),
+              onPressed: () {},
+              child: Text(
+                'Buyrutma berish',
+                style: TextStyle(fontSize: 40),
+              ))
+        ],
+      ),
     );
   }
 }

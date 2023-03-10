@@ -15,9 +15,6 @@ class HomePage extends StatelessWidget {
           img,
           width: 175,
         ),
-        // ElevatedButton(onPressed: () {
-        //  Navigator.pushNamed(context,'/second');
-        // }, child: Text(name))
       ],
     );
   }
@@ -26,7 +23,7 @@ class HomePage extends StatelessWidget {
   Widget build(BuildContext context) {
     List list = getCarDatas();
     return Scaffold(
-        appBar: AppBar(title: Text('Buy a car')),
+        appBar: AppBar(title: Text('Chevrolet Cars')),
         body: GridView.builder(
           gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
             crossAxisCount: 2,
@@ -45,7 +42,7 @@ class HomePage extends StatelessWidget {
               ),
               ElevatedButton(
                   onPressed: () {
-                    a=index;
+                    a = index;
                     Navigator.pushNamed(context, '/second');
                   },
                   child: Text(list[index].name))
