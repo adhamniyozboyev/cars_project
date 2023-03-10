@@ -14,11 +14,13 @@ class SecondPage extends StatelessWidget {
       body: Column(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
-          Image.asset(
-            list[a].image,
-            height: 300,
-            width: 300,
-            fit: BoxFit.contain,
+          Container(
+            child: Image.asset(
+              list[a].image,
+              height: 300,
+              width: 400,
+              fit: BoxFit.contain,
+            ),
           ),
           Card(
             child: Column(
@@ -43,7 +45,9 @@ class SecondPage extends StatelessWidget {
           ),
           ElevatedButton(
               style: ElevatedButton.styleFrom(backgroundColor: Colors.green),
-              onPressed: () {},
+              onPressed: () {
+                Navigator.pushNamed(context, 'third');
+              },
               child: Text(
                 'Buyrutma berish',
                 style: TextStyle(fontSize: 40),
